@@ -1,0 +1,259 @@
+// Variable Overrides 
+// Variable Overrides 
+$theme-colors: (
+  "primary": #fb0202,
+  "secondary": #373c44,
+  "footer-upper": #373c44,
+  "footer-lower": #373c44,
+  "footer-text-color": #afb0b2
+);
+
+$body-bg: #ededed;
+
+$header-bg: #303745;
+$footer-upper: #373c44;
+$footer-lower: #303745;
+
+// Bootstrap Sass Imports
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body h2,body .h2 {
+    font-size: 1rem;
+}
+
+body {
+    background: $white;
+}
+
+body.home {
+    background: url(../images/bg.jpg) no-repeat #0b0c0e;
+    background-size: cover;
+    background-position: top center;
+    .jumbotron {
+        width: 67%;
+    }
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.jumbotron {
+    background: none;
+    color: $white;
+}
+
+.display-1, 
+.display-2, 
+.display-3, 
+.display-4, 
+.display-5 {
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.txt-red {
+    color: theme-color("primary");
+}
+
+.display-flex {
+    display: flex;
+}
+
+header {
+    background: rgba(48,55,69,0.54);
+    top: 0px;
+    position: fixed;
+    left: 0px;
+    right: 0px;    
+    color: $white;
+    font-size: 0.9rem;
+    z-index: 10;
+    a {
+        color: $white;
+    }
+}
+
+a:hover {
+    color: theme-color("primary");
+}
+
+button.cta {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+ul.list-style-none {
+    list-style: none;
+}
+
+ul.footer-list {
+    list-style: none;
+    padding-left: 0px;
+    li {
+        position: relative;
+        padding-left: 20px;
+        &:before {
+            content: '>';
+            position: absolute;
+            left: 0px;
+        }
+        ul {
+            padding-left: 0px;
+            list-style: none;
+            li {
+                padding-left: 5px;
+                &:before {
+                    content: '-';
+                    left: -10px;
+                }   
+            }
+        }
+    }
+}
+
+.off-canvas-container {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    .pos-relative {
+        width: 320px;
+    }
+    .off-canvas {
+        position: absolute;
+        width: 320px;
+        right: -100%;
+        -webkit-transition: 0.4s ease-in-out;
+        -moz-transition: 0.4s ease-in-out;
+        -o-transition: 0.4s ease-in-out;
+        transition: 0.4s ease-in-out;  
+        height: 100vh;
+        background: #15181d;
+        &.open {
+            right: 0%;
+            overflow-y: scroll;
+        }
+    }
+}
+
+ul.accordion {
+    list-style: none;
+    padding: 0;
+  
+    .inner {
+        padding-left: 1em;
+        overflow: hidden;
+        display: none;
+      
+        &.show {
+          /*display: block;*/
+        }
+    }
+  
+    li {
+        margin: .5em 0;
+      
+        a.toggle {
+            width: 100%;
+            display: block;
+            background:#0e1012;
+            color: #fefefe;
+            padding: .75em;
+            border-radius: 0.15em;
+            transition: background .3s ease;
+          
+            &:hover {
+                background: rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
+}
+
+.half-underline {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0px;
+        width: 50px;
+        height: 1px;
+        background: theme-color("primary");
+    }
+}
+
+footer {
+    color: theme-color("footer-text-color");
+    a {
+        color: theme-color("footer-text-color");
+        &:hover {
+            color: $white;
+        }
+    }
+    .highlight {
+        color: $white;
+    }
+    .upper {
+        background: theme-color("footer-upper");
+        padding: 94px 0px;
+    }
+    .lower {
+        background: $footer-lower;
+        padding: 25px 0px;
+    }
+    .half-underline {
+        color: $white;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.home {
+        background: url(../images/bg-mobile.jpg) no-repeat #0b0c0e;
+        background-size: contain;
+        background-position: right top;
+    }
+    button.cta {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    body.home .jumbotron p {
+        font-size: 1.1rem;
+    }
+    footer .half-underline {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    header {
+        .upper {
+            background: #272d39;
+            .navbar-nav {
+                flex-direction: unset;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .navbar-text {
+                flex-direction: unset;
+                justify-content: center;
+                flex-wrap: wrap;
+                display: flex;
+            }
+        }
+        .lower {
+            background: #303745;
+        }
+    }
+}
