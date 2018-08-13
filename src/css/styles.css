@@ -6663,8 +6663,14 @@ h1 {
 .display-flex {
   display: flex; }
 
+.form-control {
+  height: auto; }
+
+body.home header {
+  background: rgba(48, 55, 69, 0.54); }
+
 header {
-  background: rgba(48, 55, 69, 0.54);
+  background: #373c44;
   top: 0px;
   position: fixed;
   left: 0px;
@@ -6724,9 +6730,50 @@ ul.footer-list {
       right: 0%;
       overflow-y: scroll; }
 
+.hamburger .fa-bars {
+  font-size: 25px; }
+
+#back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 30px;
+  background: #212429;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0px;
+  text-decoration: none;
+  transition: opacity 0.2s ease-out;
+  opacity: 0; }
+
+#back-to-top:hover {
+  background: #171b20; }
+
+#back-to-top.show {
+  opacity: 1; }
+
+section.content {
+  padding: 20px 0px 80px; }
+  section.content h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+
 ul.accordion {
   list-style: none;
   padding: 0; }
+  ul.accordion i.fas.fa-angle-down {
+    position: absolute;
+    right: 15px;
+    top: 15px; }
   ul.accordion .inner {
     padding-left: 1em;
     overflow: hidden;
@@ -6734,7 +6781,8 @@ ul.accordion {
     ul.accordion .inner.show {
       /*display: block;*/ }
   ul.accordion li {
-    margin: .5em 0; }
+    margin: .5em 0;
+    position: relative; }
     ul.accordion li a.toggle {
       width: 100%;
       display: block;
@@ -6744,6 +6792,16 @@ ul.accordion {
       border-radius: 0.15em;
       transition: background .3s ease; }
       ul.accordion li a.toggle:hover {
+        background: rgba(0, 0, 0, 0.9); }
+    ul.accordion li a.nav-link {
+      width: 100%;
+      display: block;
+      background: #0e1012;
+      color: #fefefe;
+      padding: .75em;
+      border-radius: 0.15em;
+      transition: background .3s ease; }
+      ul.accordion li a.nav-link:hover {
         background: rgba(0, 0, 0, 0.9); }
 
 .half-underline {
@@ -6801,4 +6859,7 @@ footer {
       flex-wrap: wrap;
       display: flex; }
   header .lower {
-    background: #303745; } }
+    background: #303745; }
+  #back-to-top {
+    right: 10px;
+    bottom: 10px; } }

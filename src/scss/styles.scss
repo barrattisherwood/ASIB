@@ -71,8 +71,18 @@ h1 {
     display: flex;
 }
 
+.form-control {
+    height: auto;
+}
+
+body.home {
+    header {
+        background: rgba(48,55,69,0.54);
+    }
+}
+
 header {
-    background: rgba(48,55,69,0.54);
+    background: #373c44;
     top: 0px;
     position: fixed;
     left: 0px;
@@ -147,9 +157,58 @@ ul.footer-list {
     }
 }
 
+.hamburger {
+    .fa-bars {
+        font-size: 25px;
+    }
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background: #212429;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+#back-to-top:hover {
+    background: #171b20;
+}
+#back-to-top.show {
+    opacity: 1;
+}
+
+section.content {
+    padding: 20px 0px 80px;
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+}
+
 ul.accordion {
     list-style: none;
     padding: 0;
+
+    i.fas.fa-angle-down {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
   
     .inner {
         padding-left: 1em;
@@ -160,10 +219,11 @@ ul.accordion {
           /*display: block;*/
         }
     }
-  
+
     li {
         margin: .5em 0;
-      
+        position: relative;
+
         a.toggle {
             width: 100%;
             display: block;
@@ -177,6 +237,19 @@ ul.accordion {
                 background: rgba(0, 0, 0, 0.9);
             }
         }
+        a.nav-link {
+            width: 100%;
+            display: block;
+            background:#0e1012;
+            color: #fefefe;
+            padding: .75em;
+            border-radius: 0.15em;
+            transition: background .3s ease;
+          
+            &:hover {
+                background: rgba(0, 0, 0, 0.9);
+            }
+        }        
     }
 }
 
@@ -255,5 +328,9 @@ footer {
         .lower {
             background: #303745;
         }
+    }
+    #back-to-top {
+        right: 10px;
+        bottom: 10px;
     }
 }
