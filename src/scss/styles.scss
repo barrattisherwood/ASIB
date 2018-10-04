@@ -19,9 +19,9 @@ $footer-lower: #303745;
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
-@import "node_modules/bootstrap/scss/root";
+// @import "node_modules/bootstrap/scss/root";
 @import "node_modules/bootstrap/scss/reboot";
-@import "node_modules/bootstrap/scss/type";
+// @import "node_modules/bootstrap/scss/type";
 // @import "node_modules/bootstrap/scss/images";
 // @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/grid";
@@ -77,6 +77,9 @@ body.modal-open {
 .jumbotron {
     background: none;
     color: $white;
+    h1.display-5 {
+        line-height: 3.5rem;
+    }
 }
 
 .display-1, 
@@ -328,6 +331,9 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    a.cta {
+        margin-bottom: 0.3rem;
+    }
     body.home {
         background: url(../images/bg-mobile.jpg) no-repeat #0b0c0e;
         background-size: contain;
@@ -339,10 +345,20 @@ footer {
     h1 {
         font-size: 2rem;
     }
-    body.home .jumbotron p {
+    body.home .jumbotron {
+        h1 {
+            line-height: 3.6rem;
+            line-height: 2.5rem;
+        }
+    }
+    p {
         font-size: 1.1rem;
     }
-    footer .half-underline {
+    footer {
+        .upper {
+            padding: 30px 0;
+        }
+    } .half-underline {
         margin-bottom: 20px;
         margin-top: 20px;
     }
